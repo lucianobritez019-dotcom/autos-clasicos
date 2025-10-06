@@ -1,0 +1,35 @@
+// Prisma schema for autos-clasicos
+// SQLite file database
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Settings {
+  id             Int     @id @default(1)
+  heroImageUrl   String
+  whatsappNumber String?
+  siteTitle      String?
+  logoUrl        String?
+}
+
+model Vehicle {
+  slug         String  @id
+  brand        String
+  model        String
+  year         Int
+  priceUsd     Int
+  thumbnail    String
+  images       Json
+  videos       Json?
+  description  String
+  sold         Boolean @default(false)
+  mediaOrdered Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
