@@ -1,16 +1,16 @@
 // Prisma schema for autos-clasicos
 
-
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db  { 
-provider = "postgresql" 
-url = env("DATABASE_URL") }
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
 model Settings {
-  id             Int     @id @default(1)
+  id             Int    @id @default(1)
   heroImageUrl   String
   whatsappNumber String?
   siteTitle      String?
@@ -18,7 +18,7 @@ model Settings {
 }
 
 model Vehicle {
-  slug         String  @id
+  slug         String   @id
   brand        String
   model        String
   year         Int
@@ -27,7 +27,7 @@ model Vehicle {
   images       Json
   videos       Json?
   description  String
-  sold         Boolean @default(false)
+  sold         Boolean  @default(false)
   mediaOrdered Json?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt

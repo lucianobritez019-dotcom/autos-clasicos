@@ -2,10 +2,7 @@
 remote_images = ["https://source.unsplash.com/**", "https://images.unsplash.com/**", "https://ext.same-assets.com/**", "https://ugc.same-assets.com/**"]
 
 [build]
-# ➊ Genera el cliente de Prisma
-# ➋ Empuja el esquema a Supabase (crea/actualiza tablas)
-# ➌ Compila Next.js
-command = "bunx prisma generate && bunx prisma db push && bun run build"
+command = "bunx prisma format && bunx prisma generate && bunx prisma db push && bun run build"
 publish = ".next"
 
 [[plugins]]
