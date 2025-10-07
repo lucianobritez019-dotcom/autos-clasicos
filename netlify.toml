@@ -1,5 +1,5 @@
 [images]
-remote_images = ["https://source.unsplash.com/**", "https://images.unsplash.com/**", "https://ext.same-assets.com/**", "https://ugc.same-assets.com/**"]
+remote_images = []
 
 [build]
 command = "bunx prisma format && bunx prisma generate && bunx prisma db push && bun run build"
