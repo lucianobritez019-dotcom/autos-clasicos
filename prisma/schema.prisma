@@ -1,5 +1,5 @@
 // Prisma schema for autos-clasicos
-// SQLite file database
+
 
 generator client {
   provider = "prisma-client-js"
